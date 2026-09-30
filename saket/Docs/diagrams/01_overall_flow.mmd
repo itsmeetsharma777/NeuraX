@@ -1,0 +1,13 @@
+flowchart TD
+    A[Citizen / Witness] --> B[Web / PWA / USSD]
+    B --> C[Validate Report]
+    C --> D[Classify Disaster]
+    D --> E[Priority + Reasoning]
+    E --> F[Duplicate / Cluster Check]
+    F --> G[Incident Created]
+    G --> H[Responder Dashboard]
+    H --> I[Assign Team]
+    I --> J[Respond]
+    J --> K[Update Status]
+    K --> L[Notify Citizen]
+    L --> M[Resolve + Audit]

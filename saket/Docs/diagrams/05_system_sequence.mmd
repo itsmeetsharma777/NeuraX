@@ -1,0 +1,23 @@
+sequenceDiagram
+    participant C as Citizen
+    participant W as Web/USSD
+    participant API
+    participant E as Intelligence
+    participant DB
+    participant R as Responder
+
+    C->>W: Submit incident
+    W->>API: Create incident
+    API->>E: Validate/classify/priority
+    E-->>API: Result + reasons
+    API->>DB: Store incident + audit
+    DB-->>API: Incident ID
+    API-->>W: Confirmation
+    R->>API: View queue
+    API->>DB: Query incidents
+    DB-->>API: Incidents
+    R->>API: Assign team
+    API->>DB: Save assignment
+    API-->>C: Status update
+    R->>API: Resolve
+    API->>DB: Save resolution

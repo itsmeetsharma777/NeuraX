@@ -1,0 +1,16 @@
+stateDiagram-v2
+    [*] --> MainMenu
+    MainMenu --> SOS
+    MainMenu --> Report
+    MainMenu --> Status
+    MainMenu --> Help
+    Report --> Type
+    Type --> Location
+    Location --> People
+    People --> Needs
+    Needs --> Confirm
+    Confirm --> Submitted
+    Submitted --> MainMenu
+    Status --> EnterID
+    EnterID --> StatusResult
+    StatusResult --> MainMenu
